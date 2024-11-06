@@ -44,15 +44,12 @@ def main():
 
         print(f"Title: {title}\nAuthors: {authors}\nDescription: {description}\n")
 
-        # Translate and print book summary
         translated_summary = translate_text(description, target_language, api_key)
         print("Translated Summary:")
         print(translated_summary)
 
-        # Text-to-Speech for the translated summary
         text_to_speech(translated_summary, 'com.apple.speech.synthesis.voice.samantha')  # Adjust based on your OS
 
-        # For Chapter Summaries (mock implementation)
         chapters = book_info.get('tableOfContents', [])
         if chapters:
             print("\nAvailable Chapters:")
@@ -63,7 +60,6 @@ def main():
             translated_chapter_summary = translate_text(chapter_summary, target_language, api_key)
             print(f"Translated Chapter Summary:\n{translated_chapter_summary}")
 
-        # Language Learning Tool (mock implementation)
         vocabulary = ["word1", "word2"]  # This would ideally come from the text
         print("\nVocabulary Builder:")
         for word in vocabulary:
